@@ -1,4 +1,5 @@
 <%
+    //Copyright (c) 2022-2025 Ralph Campbell.
     String menu = "safes";
     try
     {
