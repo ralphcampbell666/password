@@ -1,0 +1,33 @@
+Copyright (c) 2022-2025 Ralph Campbell.
+
+Key Features
+1. All passwords are encrypted
+2. AES256 encryption is used to Encrypt all "passwords". During installation a unique KEY and SALT are created for each "Password" app installation. Database files can not be shared between "Password" app installations. 
+3. Runs on Tomcat 11 or higher.
+4. Uses SQLite as the DB engine. A small files based DB. 
+5. Backup and Restore functions are available to the admins
+6. Individual "password" history is saved so "passwords" can be "undeleted" or "restored" to any previous value. 
+7. "Passwords" can have expiration dates set. As "Passwords" get close to their expiration date, notices with be displayed in the "Safe" displays.
+
+How Password app works.
+"Passwords" are stored in a "Safe".
+"Users" are assigned to "Groups" 
+"Groups" have specific permissions to Create/Read/Update/Delete all "Passwords" in a "Safe"
+"Users" with admin permissions can do anything to everything.
+
+
+Installation and Setup Instructions
+1. Install a Apache Tomcat 11, ensure Tomcat is running by opening a web browser to the base Tomcat URL http://server_name_or_IP:port_number/
+2. Copy the "password.war" file to the "webapps" directory. Ensure the tomcat service has read/write access to the "password.war" are the same.
+3. Restart the Apache Tomcat service to force Tomcat to expand/extract the "password.war" file. After Tomcat expand/extracts the war file several directories will appear under the "password" directory. 
+4. Open a web browser to the Tomcat URL http://server_name_or_IP:port_number/password   The "Initial Setup" web page should be displayed
+5. Set the "admins" password.
+6. Enter the directory where the SQLite password database will be stored. The Tomcat service must have read/write permission to this directory.
+7. Click on  "Run setup". The Sign in web page should be displayed.
+8. On the "Sign in" page enter Username "admin" and the admins password set in the previous step.  
+9. The "Safes" page should be displayed. 
+10. Click on the "Admin" menu item in the top ribbon.
+    a. Create the Users
+    b. Create the Groups and assign Users to Groups
+    c. Create "Safes" and give "Groups" access to the "Safe"
+    d. Add "Passwords" to the "Safes"
